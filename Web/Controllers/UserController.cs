@@ -15,22 +15,6 @@ public class UserController : Controller
         _userService = userService;
     }
 
-    [Route("v1/User/CreateUser")]
-    [HttpPost]
-    public IActionResult CreateAccessUser(User user)
-    {
-        try
-        {
-            _userService.CreateUser(user);
-            return Ok("User created successfully");
-        }
-        catch (Exception ex)
-        {
-            return BadRequest(ex);
-        }
-
-    }
-
     [Route("v1/User/GetUserById")]
     [HttpGet]
     public IActionResult GetUserById(int userId)

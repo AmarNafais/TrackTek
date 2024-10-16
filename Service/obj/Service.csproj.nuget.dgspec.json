@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj": {}
+    "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj": {}
   },
   "projects": {
-    "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj": {
+    "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj",
+        "projectUniqueName": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj",
         "projectName": "Data",
-        "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj",
+        "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj",
         "packagesPath": "C:\\Users\\amarn\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\TrackTek\\core-api\\Data\\obj\\",
+        "outputPath": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amarn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,14 +85,14 @@
         }
       }
     },
-    "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj": {
+    "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj",
+        "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\amarn\\.nuget\\packages\\",
-        "outputPath": "C:\\Workspace\\TrackTek\\core-api\\Service\\obj\\",
+        "outputPath": "C:\\Workspace\\TrackTek\\TrackTek\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\amarn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -110,8 +110,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj": {
-                "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj"
+              "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj": {
+                "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj"
               }
             }
           }

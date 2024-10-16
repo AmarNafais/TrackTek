@@ -21,7 +21,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Web.Controllers.UserController",
+    "ContainingType": "AuthController",
     "Method": "CreateAccessUser",
     "RelativePath": "v1/User/CreateUser",
     "HttpMethod": "POST",

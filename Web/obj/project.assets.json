@@ -4289,11 +4289,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\TrackTek\\core-api\\Web\\Web.csproj",
+      "projectUniqueName": "C:\\Workspace\\TrackTek\\TrackTek\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Web\\Web.csproj",
+      "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Web\\Web.csproj",
       "packagesPath": "C:\\Users\\amarn\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspace\\TrackTek\\core-api\\Web\\obj\\",
+      "outputPath": "C:\\Workspace\\TrackTek\\TrackTek\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amarn\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4311,11 +4311,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj": {
-              "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj"
+            "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj": {
+              "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj"
             },
-            "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj": {
-              "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj"
+            "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj": {
+              "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj"
             }
           }
         }

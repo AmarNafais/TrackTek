@@ -3831,11 +3831,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj",
+      "projectUniqueName": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj",
       "projectName": "Data",
-      "projectPath": "C:\\Workspace\\TrackTek\\core-api\\Data\\Data.csproj",
+      "projectPath": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\Data.csproj",
       "packagesPath": "C:\\Users\\amarn\\.nuget\\packages\\",
-      "outputPath": "C:\\Workspace\\TrackTek\\core-api\\Data\\obj\\",
+      "outputPath": "C:\\Workspace\\TrackTek\\TrackTek\\Data\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\amarn\\AppData\\Roaming\\NuGet\\NuGet.Config",

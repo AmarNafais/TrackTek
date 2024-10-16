@@ -1,5 +1,9 @@
 ﻿using Data.Entities;
 using Data.Repositories;
+using Microsoft.AspNetCore.Identity;
+using System.Security.Cryptography;
+using System.Text;
+
 namespace Services;
 
 public interface IUserService
@@ -14,19 +18,26 @@ public interface IUserService
 public class UserService : IUserService
 {
     private readonly IUserRepository _userRepository;
+    private readonly IEmailService _emailService;
+    private readonly IPasswordHasher<User> _passwordHasher;
 
-    public UserService(IUserRepository userRepository)
+    public UserService(IUserRepository userRepository, IEmailService emailService, IPasswordHasher<User> passwordHasher)
     {
         _userRepository = userRepository;
+        _emailService = emailService;
+        _passwordHasher = passwordHasher;
     }
 
     public void CreateUser(User user)
     {
+        var generatedPassword = GenerateRandomPassword(8);
         var newUser = new User()
         {
             Name = user.Name,
             Email = user.Email,
+            Password = _passwordHasher.HashPassword(user, generatedPassword),
         };
+        _emailService.SendWelcomeEmail(user, generatedPassword);
         _userRepository.AddUser(newUser);
     }
 
@@ -63,17 +74,36 @@ public class UserService : IUserService
 
         _userRepository.UpdateUser(updateUser);
     }
+
     public User GetUserByEmailAndPassword(string email, string password)
     {
-        var user = _userRepository.GetAllUsers()
-            .FirstOrDefault(u => u.Email == email);
+        var user = _userRepository.GetAllUsers().FirstOrDefault(u => u.Email == email);
 
         if (user == null)
             return null;
 
-        if (user.Password == password)
+        var passwordVerificationResult = _passwordHasher.VerifyHashedPassword(user, user.Password, password);
+        if (passwordVerificationResult == PasswordVerificationResult.Success)
             return user;
 
         return null;
+    }
+
+    private string GenerateRandomPassword(int length)
+    {
+        const string validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        var password = new StringBuilder();
+        using (var rng = RandomNumberGenerator.Create())
+        {
+            var byteArray = new byte[1];
+
+            for (int i = 0; i < length; i++)
+            {
+                rng.GetBytes(byteArray);
+                var randomIndex = byteArray[0] % validCharacters.Length;
+                password.Append(validCharacters[randomIndex]);
+            }
+        }
+        return password.ToString();
     }
 }

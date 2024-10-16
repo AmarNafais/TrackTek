@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WeezU2EXAB8=",
+  "dgSpecHash": "NvZIKvox0v8=",
   "success": true,
-  "projectFilePath": "C:\\Workspace\\TrackTek\\core-api\\Service\\Service.csproj",
+  "projectFilePath": "C:\\Workspace\\TrackTek\\TrackTek\\Service\\Service.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amarn\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\amarn\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
