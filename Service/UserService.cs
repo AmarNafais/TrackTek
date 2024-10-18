@@ -1,17 +1,16 @@
 ﻿using Data.Entities;
 using Data.Repositories;
 using Microsoft.AspNetCore.Identity;
+using Service.DTOs;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace Services;
-
 public interface IUserService
 {
-    void CreateUser(User user);
+    void CreateUser(CreateUserDTO userDto);
     object GetUserById(int id);
     object GetAllUsers();
-    void UpdateUser(User user);
+    void UpdateUser(UpdateUserDTO userDto);
     User GetUserByEmailAndPassword(string email, string password);
 }
 
@@ -28,16 +27,17 @@ public class UserService : IUserService
         _passwordHasher = passwordHasher;
     }
 
-    public void CreateUser(User user)
+    public void CreateUser(CreateUserDTO userDto)
     {
         var generatedPassword = GenerateRandomPassword(8);
         var newUser = new User()
         {
-            Name = user.Name,
-            Email = user.Email,
-            Password = _passwordHasher.HashPassword(user, generatedPassword),
+            Name = userDto.Name,
+            Email = userDto.Email,
+            Password = _passwordHasher.HashPassword(new User(), generatedPassword),
         };
-        _emailService.SendWelcomeEmail(user, generatedPassword);
+
+        _emailService.SendWelcomeEmail(newUser, generatedPassword);
         _userRepository.AddUser(newUser);
     }
 
@@ -63,29 +63,26 @@ public class UserService : IUserService
         });
     }
 
-    public void UpdateUser(User user)
+    public void UpdateUser(UpdateUserDTO userDto)
     {
-        var updateUser = new User()
-        {
-            Id = user.Id,
-            Name = user.Name,
-            Email = user.Email,
-        };
+        var updateUser = _userRepository.GetByUserId(userDto.Id);
 
-        _userRepository.UpdateUser(updateUser);
+        if (updateUser != null)
+        {
+            updateUser.Name = userDto.Name;
+            updateUser.Email = userDto.Email;
+            _userRepository.UpdateUser(updateUser); 
+        }
     }
 
     public User GetUserByEmailAndPassword(string email, string password)
     {
         var user = _userRepository.GetAllUsers().FirstOrDefault(u => u.Email == email);
-
         if (user == null)
             return null;
-
         var passwordVerificationResult = _passwordHasher.VerifyHashedPassword(user, user.Password, password);
         if (passwordVerificationResult == PasswordVerificationResult.Success)
             return user;
-
         return null;
     }
 
@@ -96,7 +93,6 @@ public class UserService : IUserService
         using (var rng = RandomNumberGenerator.Create())
         {
             var byteArray = new byte[1];
-
             for (int i = 0; i < length; i++)
             {
                 rng.GetBytes(byteArray);

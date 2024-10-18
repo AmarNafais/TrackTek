@@ -22,15 +22,15 @@
   },
   {
     "ContainingType": "AuthController",
-    "Method": "CreateAccessUser",
+    "Method": "CreateUser",
     "RelativePath": "v1/User/CreateUser",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Data.Entities.User",
+        "Name": "userDto",
+        "Type": "Service.DTOs.CreateUserDTO",
         "IsRequired": true
       }
     ],
@@ -71,8 +71,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
-        "Type": "Data.Entities.User",
+        "Name": "userDto",
+        "Type": "Service.DTOs.UpdateUserDTO",
         "IsRequired": true
       }
     ],

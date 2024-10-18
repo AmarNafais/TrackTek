@@ -4,10 +4,8 @@
 
 namespace Data.Migrations
 {
-    /// <inheritdoc />
     public partial class initial_migration : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(

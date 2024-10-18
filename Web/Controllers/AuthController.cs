@@ -1,7 +1,7 @@
 ﻿using Data.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
-using Services;
+using Service.DTOs;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -45,11 +45,11 @@ public class AuthController : Controller
 
     [Route("v1/User/CreateUser")]
     [HttpPost]
-    public IActionResult CreateAccessUser(User user)
+    public IActionResult CreateUser(CreateUserDTO userDto)
     {
         try
         {
-            _userService.CreateUser(user);
+            _userService.CreateUser(userDto);
             return Ok("User created successfully");
         }
         catch (Exception ex)

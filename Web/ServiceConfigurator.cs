@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
-using Services;
+using Service;
 using Data.Repositories;
 using Data.Entities;
 

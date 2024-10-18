@@ -1,7 +1,8 @@
 ﻿using Data.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Services;
+using Service;
+using Service.DTOs;
 namespace Web.Controllers;
 
 [ApiController]
@@ -47,11 +48,11 @@ public class UserController : Controller
 
     [Route("v1/User/UpdateUser")]
     [HttpPost]
-    public IActionResult UpdateUser(User user)
+    public IActionResult UpdateUser(UpdateUserDTO userDto)
     {
         try
         {
-            _userService.UpdateUser(user);
+            _userService.UpdateUser(userDto);
             return Ok("User updated successfully");
         }
         catch (Exception ex)
